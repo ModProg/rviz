@@ -107,6 +107,7 @@ void PointCloud2Display::processMessage(const sensor_msgs::PointCloud2ConstPtr& 
     size_t points_to_copy = 0;
     for (; ptr < ptr_end; ptr += point_step)
     {
+      // TODO endianess
       float x = *reinterpret_cast<const float*>(ptr + xoff);
       float y = *reinterpret_cast<const float*>(ptr + yoff);
       float z = *reinterpret_cast<const float*>(ptr + zoff);
